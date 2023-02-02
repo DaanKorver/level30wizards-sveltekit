@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import Star from '$lib/icons/star.svg?component';
 	import Feature from '$lib/components/shared/Feature.svelte';
 
 	export let data: PageData;
@@ -13,6 +14,9 @@
 			'https://the-guild.dev/graphql/codegen',
 			'https://github.com/Level30Wizards/level30wizards-next-react-stack/blob/main/.graphqlrc.js'
 		]}>GraphQL codegen + Typescript Types</Feature
+	>
+	<Feature link="https://github.com/poppa/sveltekit-svg"
+		>SVG Components using SVGOMG. This is a Star svg <Star color="dodgerblue" width="16" /></Feature
 	>
 </ul>
 
@@ -29,17 +33,5 @@
 	h1 > span {
 		display: block;
 		color: dodgerblue;
-	}
-
-	li {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: flex-start;
-		gap: 0.5rem;
-	}
-
-	li::before {
-		content: '-';
 	}
 </style>
