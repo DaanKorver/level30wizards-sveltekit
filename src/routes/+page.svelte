@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Star from '$lib/icons/star.svg?component';
-	import Feature from '$lib/components/shared/Feature.svelte';
+	import Feature from '$lib/components/shared/Feature/Feature.svelte';
 
 	export let data: PageData;
 </script>
@@ -17,6 +17,9 @@
 	>
 	<Feature link="https://github.com/poppa/sveltekit-svg"
 		>SVG Components using SVGOMG. This is a Star svg <Star color="dodgerblue" width="16" /></Feature
+	>
+	<Feature link="https://codingcat.dev/tutorial/integrating-storybook-with-sveltekit"
+		>Storybook</Feature
 	>
 </ul>
 
