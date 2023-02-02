@@ -1,0 +1,5 @@
+query getRecipeTitles {
+	recepts(first: 10) {
+		titel
+	}
+}

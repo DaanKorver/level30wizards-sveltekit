@@ -1,0 +1,25 @@
+overwrite: true
+schema: 'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clcys05vm3gyp01uj38mk581f/master'
+documents: './src/lib/graphql/**/*.gql'
+generates:
+  src/lib/graphql/generated/:
+    plugins:
+      - 'typescript'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'
+  ./src/lib/graphql/generated/sdk.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-graphql-request'
+      - 'plugin-typescript-swr'
+    config:
+      fetcher:
+        endpoint: 'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clcys05vm3gyp01uj38mk581f/master'
+    rawRequest: false
+    inlineFragmentTypes: 'combine'
+    skipTypename: false,
+    exportFragmentSpreadSubTypes: true,
+    dedupeFragments: true,
+    preResolveTypes: true,
