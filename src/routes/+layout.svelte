@@ -2,4 +2,10 @@
 	import '$lib/css/app.css';
 </script>
 
-<slot />
+<main><slot /></main>
+
+<style>
+	main {
+		padding: 2em;
+	}
+</style>

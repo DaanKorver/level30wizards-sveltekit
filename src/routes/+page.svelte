@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import Star from '$lib/icons/star.svg?component';
 	import Feature from '$lib/components/shared/Feature/Feature.svelte';
+	import Example from '$lib/components/shared/ThrelteExample/Example.svelte';
 
 	export let data: PageData;
 </script>
@@ -21,6 +22,7 @@
 	<Feature link="https://codingcat.dev/tutorial/integrating-storybook-with-sveltekit"
 		>Storybook</Feature
 	>
+	<Feature link="https://threlte.xyz/">Three.JS + Rapier + Theatre using Threlte</Feature>
 </ul>
 
 <h2>Examples</h2>
@@ -31,6 +33,12 @@
 		<li>{recept.titel}</li>
 	{/each}
 </ul>
+
+<section>
+	<h3>ThreeJS example</h3>
+	<p>Try Orbit Controls and Hover</p>
+	<Example />
+</section>
 
 <style>
 	h1 > span {

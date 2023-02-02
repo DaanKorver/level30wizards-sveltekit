@@ -10,7 +10,9 @@
 			{#if Array.isArray(link)}
 				<!-- Each loop -->
 				{#each link as lnk, i}
-					<a target="_blank" rel="noreferrer" href={lnk}>Reference #{i + 1}</a>
+					<li>
+						<a target="_blank" rel="noreferrer" href={lnk}>Reference #{i + 1}</a>
+					</li>
 				{/each}
 			{:else}
 				<li><a target="_blank" rel="noreferrer" href={link}>Reference</a></li>
