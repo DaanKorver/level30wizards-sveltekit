@@ -3,8 +3,23 @@
 	import Star from '$lib/icons/star.svg?component';
 	import Feature from '$lib/components/shared/Feature/Feature.svelte';
 	import Example from '$lib/components/shared/ThrelteExample/Example.svelte';
+	import Image from 'svimg';
+	import { exampleStore } from '$lib/stores/store';
 
+	// PageData is typing for the load function return
 	export let data: PageData;
+
+	let toggled = false;
+	function onClick() {
+		toggled = !toggled;
+		toggled ? exampleStore.set('Toggled') : exampleStore.set('Another state');
+	}
+
+	// Using reactive statement
+	$: console.log('From a reactive statement', $exampleStore);
+
+	// Using subscribe
+	exampleStore.subscribe((value) => console.log('From a subscribe: ', value));
 </script>
 
 <h1>Welcome to <span>SvelteKit for Wizards</span></h1>
@@ -23,6 +38,7 @@
 		>Storybook</Feature
 	>
 	<Feature link="https://threlte.xyz/">Three.JS + Rapier + Theatre using Threlte</Feature>
+	<Feature link="https://github.com/xiphux/svimg">Image optimization using svimg</Feature>
 </ul>
 
 <h2>Examples</h2>
@@ -38,6 +54,17 @@
 	<h3>ThreeJS example</h3>
 	<p>Try Orbit Controls and Hover</p>
 	<Example />
+</section>
+
+<section>
+	<h3>Image optimization using svimg</h3>
+	<Image width={400} src="dragon.png" alt="Green dragon" />
+</section>
+
+<section>
+	<h3>Store example</h3>
+	<button on:click={onClick}>Click to toggle</button>
+	<p>{$exampleStore}</p>
 </section>
 
 <style>
